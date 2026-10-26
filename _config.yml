@@ -1,20 +1,21 @@
-name: AdrianYi
-description: XJTLU · ICS
-avatar: https://github.com/zde2071-blip.png
+title: AdrianYi
+position: Undergraduate · ICS
+affiliation: XJTLU
+affiliation_link: https://www.xjtlu.edu.cn/
+description: AdrianYi — XJTLU ICS undergraduate; CUMCM provincial first prize.
+canonical: https://zde2071-blip.github.io/
 url: https://zde2071-blip.github.io
 baseurl: ""
-footer-links:
-  github: zde2071-blip
-disqus: ""
-google_analytics: ""
-permalink: /:title/
-version: v1.2.0
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-sass:
-  style: compressed
+github_link: https://github.com/zde2071-blip
+avatar: https://github.com/zde2071-blip.png
+favicon: ./assets/img/favicon.png
+favicon_dark: ./assets/img/favicon-dark.png
+enable_footnote: true
+auto_dark_mode: true
+font: "Serif"
+remote_theme: yaoyao-liu/minimal-light
 plugins:
+  - jekyll-remote-theme
   - jekyll-sitemap
 exclude:
   - README.md
@@ -22,3 +23,4 @@ exclude:
   - CNAME
   - about.md
   - _posts
+  - style.scss
