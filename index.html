@@ -2,43 +2,160 @@
 layout: homepage
 ---
 
-<h2 id="academics">Academics</h2>
+<style>
+/* Keep the Minimal Light identity; give the CV its own spacing and hierarchy. */
+.cv-page {
+  --cv-ink: #252d39;
+  --cv-muted: #647082;
+  --cv-accent: #043361;
+  --cv-rule: #e2e7ed;
+  --cv-soft: #f4f7fb;
+  color: var(--cv-ink);
+  font-size: 16px;
+  line-height: 1.65;
+}
+.cv-page * { box-sizing: border-box; }
+.cv-page p { margin: 0; }
+.cv-block { margin: 0 0 40px; scroll-margin-top: 24px; }
+.cv-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; }
+.cv-number { color: var(--cv-muted); font-size: 11px; letter-spacing: .08em; }
+.cv-page .cv-heading h2 {
+  margin: 0; color: var(--cv-accent); font-size: 22px;
+  font-weight: 600; line-height: 1.3; white-space: nowrap;
+}
+.cv-heading::after { content: ""; flex: 1; height: 1px; background: var(--cv-rule); margin-left: 5px; }
+.cv-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 24px; align-items: baseline; }
+.cv-page .cv-title { margin: 0; font-size: 17px; font-weight: 600; line-height: 1.5; color: var(--cv-ink); }
+.cv-date { color: var(--cv-muted); font-size: 13px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.cv-subtitle { margin-top: 6px !important; color: var(--cv-muted); font-size: 15px; line-height: 1.65; }
+.cv-distinction {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  margin-top: 22px; padding: 14px 17px;
+  border-left: 2px solid var(--cv-accent); background: var(--cv-soft);
+}
+.cv-label { display: block; margin-bottom: 3px; color: var(--cv-muted); font-size: 12px; }
+.cv-page .cv-award-name { font-size: 15px; color: var(--cv-ink); line-height: 1.5; }
+.cv-distinction .cv-result { text-align: right; flex-shrink: 0; }
+.cv-page .cv-result strong { display: block; color: var(--cv-accent); font-size: 16px; font-weight: 600; }
+.cv-empty { color: var(--cv-muted); font-size: 14px; }
+.cv-block-compact { margin-bottom: 34px; }
+.cv-block-compact .cv-heading { margin-bottom: 13px; }
+.cv-research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.cv-research-slot { display: flex; justify-content: space-between; gap: 12px; color: var(--cv-muted); font-size: 14px; }
+.cv-page .cv-prize { display: inline-block; margin-top: 12px; color: var(--cv-accent); font-size: 15px; font-weight: 600; }
+.cv-projects { list-style: none; margin: 0; padding: 0; }
+.cv-project { margin: 0; padding: 19px 0; border-bottom: 1px solid var(--cv-rule); }
+.cv-project:first-child { padding-top: 0; }
+.cv-project:last-child { border-bottom: 0; padding-bottom: 0; }
+.cv-project-top { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 6px; }
+.cv-page .cv-project-link { color: var(--cv-accent); font-weight: 600; font-size: 18px; line-height: 1.5; }
+.cv-project-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.cv-project-link:focus-visible { outline: 2px solid var(--cv-accent); outline-offset: 4px; border-radius: 2px; }
+.cv-kind { color: var(--cv-muted); font-size: 12px; white-space: nowrap; }
+.cv-project-description { max-width: 58ch; color: var(--cv-muted); font-size: 15px; line-height: 1.7; }
+@media (max-width: 540px) {
+  .cv-block { margin-bottom: 32px; }
+  .cv-page .cv-heading h2 { font-size: 20px; }
+  .cv-row { grid-template-columns: 1fr; gap: 4px; }
+  .cv-distinction { align-items: flex-start; padding: 13px 14px; gap: 12px; }
+  .cv-research-grid { grid-template-columns: 1fr; gap: 9px; }
+  .cv-project-top { align-items: flex-start; flex-wrap: wrap; gap: 2px 12px; }
+  .cv-page .cv-project-link { font-size: 17px; }
+}
+@media (prefers-color-scheme: dark) {
+  .cv-page {
+    --cv-ink: #eeeff0; --cv-muted: #a9b3c3;
+    --cv-accent: #7bc9f2; --cv-rule: #3a4050; --cv-soft: #272c39;
+  }
+}
+@media print {
+  .cv-page { --cv-ink: #222; --cv-muted: #555; --cv-accent: #043361; --cv-rule: #ddd; --cv-soft: #f5f5f5; }
+  .cv-block, .cv-project { break-inside: avoid; }
+}
+</style>
 
-<h3>Education</h3>
-<p><strong>Xi’an Jiaotong-Liverpool University (XJTLU)</strong><br>
-  BSc in Information and Computing Science · 2025–Present</p>
+<div class="cv-page">
+  <div class="cv-block" id="academics" role="region" aria-labelledby="academics-title">
+    <div class="cv-heading">
+      <span class="cv-number" aria-hidden="true">01</span>
+      <h2 id="academics-title">Academics</h2>
+    </div>
+    <div class="cv-row">
+      <h3 class="cv-title">Xi’an Jiaotong-Liverpool University</h3>
+      <span class="cv-date">2025–Present</span>
+    </div>
+    <p class="cv-subtitle">BSc in Information and Computing Science · XJTLU</p>
+    <div class="cv-distinction">
+      <div>
+        <span class="cv-label">Academic honor</span>
+        <p class="cv-award-name">University Academic Achievement Award</p>
+      </div>
+      <div class="cv-result">
+        <strong>Top 10%</strong>
+        <span class="cv-date">2025–26</span>
+      </div>
+    </div>
+  </div>
 
-<h3>Academic Honors</h3>
-<p><strong>University Academic Achievement Award</strong><br>
-  Top 10% · 2025–26</p>
+  <div class="cv-block cv-block-compact" id="internships" role="region" aria-labelledby="internships-title">
+    <div class="cv-heading">
+      <span class="cv-number" aria-hidden="true">02</span>
+      <h2 id="internships-title">Internships</h2>
+    </div>
+    <p class="cv-empty">No entries listed yet.</p>
+  </div>
 
-<h2 id="internships">Internships</h2>
-<p><em>No entries listed yet.</em></p>
+  <div class="cv-block cv-block-compact" id="research" role="region" aria-labelledby="research-title">
+    <div class="cv-heading">
+      <span class="cv-number" aria-hidden="true">03</span>
+      <h2 id="research-title">Research</h2>
+    </div>
+    <div class="cv-research-grid">
+      <div class="cv-research-slot"><span>Research experience</span><span aria-label="No entries listed yet">—</span></div>
+      <div class="cv-research-slot"><span>Publications</span><span aria-label="No publications listed yet">—</span></div>
+    </div>
+  </div>
 
-<h2 id="research">Research</h2>
+  <div class="cv-block" id="competitions" role="region" aria-labelledby="competitions-title">
+    <div class="cv-heading">
+      <span class="cv-number" aria-hidden="true">04</span>
+      <h2 id="competitions-title">Competitions</h2>
+    </div>
+    <div class="cv-row">
+      <h3 class="cv-title">CUMCM</h3>
+      <span class="cv-date">2026</span>
+    </div>
+    <p class="cv-subtitle">Contemporary Undergraduate Mathematical Contest in Modeling</p>
+    <p class="cv-prize">Provincial First Prize</p>
+  </div>
 
-<h3>Research Experience</h3>
-<p><em>No entries listed yet.</em></p>
-
-<h3>Publications</h3>
-<p><em>No publications listed yet.</em></p>
-
-<h2 id="competitions">Competitions</h2>
-<p><strong>Contemporary Undergraduate Mathematical Contest in Modeling (CUMCM)</strong><br>
-  Provincial First Prize · 2026</p>
-
-<h2 id="github-showcase">GitHub Showcase</h2>
-<ul>
-  <li>
-    <p><strong><a href="https://github.com/zde2071-blip/ai-xue">AI 学 · AI Xue</a></strong><br>
-      A local AI-assisted study workspace for university courses, with course-material import, guided learning and Markdown notes.</p>
-  </li>
-  <li>
-    <p><strong><a href="https://github.com/zde2071-blip/TimeMate">TimeMate</a></strong><br>
-      An AI-assisted workspace for organizing email, tasks, schedules and deadlines.</p>
-  </li>
-  <li>
-    <p><strong><a href="https://github.com/zde2071-blip/knowledge-vault">知识全库 · Knowledge Vault</a></strong><br>
-      Public learning notes on AI, communication networks, mathematical optimization, software development and practical methods.</p>
-  </li>
-</ul>
+  <div class="cv-block" id="github-showcase" role="region" aria-labelledby="github-showcase-title">
+    <div class="cv-heading">
+      <span class="cv-number" aria-hidden="true">05</span>
+      <h2 id="github-showcase-title">GitHub Showcase</h2>
+    </div>
+    <ul class="cv-projects">
+      <li class="cv-project">
+        <div class="cv-project-top">
+          <a class="cv-project-link" href="https://github.com/zde2071-blip/ai-xue">AI 学 · AI Xue ↗</a>
+          <span class="cv-kind">Study tool</span>
+        </div>
+        <p class="cv-project-description">A local AI study workspace for course materials, guided learning and Markdown notes.</p>
+      </li>
+      <li class="cv-project">
+        <div class="cv-project-top">
+          <a class="cv-project-link" href="https://github.com/zde2071-blip/TimeMate">TimeMate ↗</a>
+          <span class="cv-kind">Productivity</span>
+        </div>
+        <p class="cv-project-description">An AI-assisted workspace for email, tasks, schedules and deadlines.</p>
+      </li>
+      <li class="cv-project">
+        <div class="cv-project-top">
+          <a class="cv-project-link" href="https://github.com/zde2071-blip/knowledge-vault">知识全库 · Knowledge Vault ↗</a>
+          <span class="cv-kind">Learning notes</span>
+        </div>
+        <p class="cv-project-description">Public notes on AI, networks, mathematical optimization, software development and practical methods.</p>
+      </li>
+    </ul>
+  </div>
+</div>
